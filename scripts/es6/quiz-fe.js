@@ -88,6 +88,10 @@ const receivedAnswer = (robot, res) => {
     
   // to get score of user.
   let scores = robot.brain.get(KEY_SCORES);
+  if (!scores) {
+    scores = [];
+    robot.brain.set(KEY_SCORES, scores);
+  }
   let scoreObj = scores.find((obj) => {
     return obj.userId == userId;
   });
