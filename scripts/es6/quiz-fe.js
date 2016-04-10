@@ -92,6 +92,7 @@ const receivedAnswer = (robot, res) => {
     scores = [];
     robot.brain.set(KEY_SCORES, scores);
   }
+
   let scoreObj = scores.find((obj) => {
     return obj.userId == userId;
   });
@@ -113,12 +114,12 @@ const receivedAnswer = (robot, res) => {
     // if correct.
     scoreObj.score++;
     res.send(util.format(messages.correct, userName) + '\n' + 
-             util.format(messages.score, userName, scoreObj.score));
+             util.format(messages.score, scoreObj.score));
   } else {
     // if incorrect.
     if (scoreObj.score > 0) scoreObj.score--; 
     res.send(util.format(messages.incorrect, userName, quiz.correct, quiz.comment) + '\n\n' + 
-             util.format(messages.score, userName, scoreObj.score));
+             util.format(messages.score, scoreObj.score));
   }
   
   // clear quiz.

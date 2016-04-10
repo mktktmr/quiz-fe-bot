@@ -1,7 +1,7 @@
 {
   "correct": "@%s 素晴らしい！正解です！！",
-  "incorrect": "@%sさん 残念。不正解です。。。\n正解は%sでした。\n\n【解説】%s",
-  "score": "%sさんの現在のスコアは%d点です！",
+  "incorrect": "@%s 残念。不正解です。。。\n正解は%sでした。\n\n【解説】%s",
+  "score": "あなたの現在のスコアは%d点です！",
   "quiz": "【問題】%s\n\nA. %s\nB. %s\nC. %s\nD. %s",
   "success_reload": "reload is successed",
   "help": "TODO",
