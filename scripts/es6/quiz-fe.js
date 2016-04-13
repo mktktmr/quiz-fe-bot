@@ -52,6 +52,22 @@ module.exports = (robot) => {
         () => process.exit(0)
       );
   });
+  
+  // debug command
+  robot.respond(/debug req (.*)$/i, (res) => {
+    let quiz = quizList.find((obj) => { 
+      return obj.id == res.match[1];
+    });
+  
+    robot.brain.set("quiz", quiz);
+  
+    res.send(util.format(messages.quiz, quiz.term,
+                                        quiz.question,
+                                        quiz.options[0], 
+                                        quiz.options[1], 
+                                        quiz.options[2], 
+                                        quiz.options[3]));
+  });
 };
 
 /**
@@ -67,7 +83,8 @@ const sendQuiz = (robot, res) => {
   
   robot.brain.set("quiz", quiz);
 
-  res.send(util.format(messages.quiz, quiz.question,
+  res.send(util.format(messages.quiz, quiz.term,
+                                      quiz.question,
                                       quiz.options[0], 
                                       quiz.options[1], 
                                       quiz.options[2], 
@@ -166,7 +183,8 @@ const sheetParse = (sheet, creds) => {
                 row.optiond
               ],
               correct: row.answeroption,
-              comment: row.comment
+              comment: row.comment,
+              term: row.term
             };
           });
           resolve(sheetData);
