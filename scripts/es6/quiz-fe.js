@@ -23,13 +23,6 @@ module.exports = (robot) => {
     sendQuiz(robot, res);
   });
 
-  // when bot is invited room.
-  //TODO not work this method.
-  robot.enter((res) => {
-    res.send('debug: entered room');
-    sendQuiz(robot, res);
-  });
-  
   // when a answer is received.
   robot.respond(/answer\s*(.*)$|ans\s*(.*)$/i, (res) => {
     receivedAnswer(robot, res);

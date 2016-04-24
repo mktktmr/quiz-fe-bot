@@ -1,9 +1,9 @@
 {
   "correct": "@%s 素晴らしい！正解です！！",
-  "incorrect": "@%s 残念。不正解です。。。\n正解は%sでした。\n\n【解説】%s",
-  "score": "あなたの現在のスコアは%d点です！",
+  "incorrect": "@%s 残念。不正解です。。。\n正解は *%s* でした。\n\n【解説】%s",
+  "score": "あなたの現在のスコアは *%d* 点です！",
   "quiz": "【%s】%s\n\nA. %s\nB. %s\nC. %s\nD. %s",
   "success_reload": "reload is successed",
   "help": "TODO",
-  "error_not_request_quiz": "ERROR: 問題が出題されていません。\n\"@%s request\"もしくは\"@%s req\"で出題を要求してください。"
+  "error_not_request_quiz": "ERROR: 問題が出題されていません。\n\" *@%s request* \"もしくは\" *@%s req* \"で出題を要求してください。"
 }
